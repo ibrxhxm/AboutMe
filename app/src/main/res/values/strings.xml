@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">About Me</string>
+    <string name="name">Ibrxhxm Ayxb</string>
+    <string name="desc_yellow_star">This is a yellow star</string>
+    <string name="bio_dummy">This project describes the digitization of load and energy usage readings over the internet. The
+proposed system design eliminates the involvement of human in electricity maintenance. The user
+can monitor real-time energy data from a webpage by providing a channel id for the load. The
+webpage utilizes the THINGSPEAK analytics to analyze the energy usage to give more detailed
+description and visualization of the energy usage statistics. Wi-Fi unit performs Internet of Things
+(IoT) operation by sending energy data of the load to the webpage which can be accessed remotely
+by the user through the channel id of the device. In the proposed system, consumer can do power
+management by knowing energy usage in real-time. This proposed system utilizes a Split-core
+Current Transformer (SCT-013-000) sensor, a Voltage Transformer (ZMPT101B) sensor, an
+OLED display, a RaspberryPi and an Arduino microcontroller.This project describes the digitization of load and energy usage readings over the internet. The proposed system design eliminates the involvement of human in electricity maintenance. The user can monitor real-time energy data from a webpage by providing a channel id for the load. The webpage utilizes the THINGSPEAK analytics to analyze the energy usage to give more detailed description and visualization of the energy usage statistics. Wi-Fi unit performs Internet of Things (IoT) operation by sending energy data of the load to the webpage which can be accessed remotely by the user through the channel id of the device. In the proposed system, consumer can do power management by knowing energy usage in real-time. This proposed system utilizes a Split-core Current Transformer (SCT-013-000) sensor, a Voltage Transformer (ZMPT101B) sensor, an OLED display, a RaspberryPi and an Arduino microcontroller.</string>
+</resources>

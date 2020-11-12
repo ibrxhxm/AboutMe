@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/name_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textAlignment="center" />
+
+    <ImageView
+        android:id="@+id/iv_yellow_star"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:contentDescription="@string/desc_yellow_star"
+        app:srcCompat="@drawable/ic_yellow_star" />
+
+
+    <ScrollView
+        android:id="@+id/scrlv_bio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_bio"
+            style="@style/name_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bio_dummy" />
+
+    </ScrollView>
+
+
+</LinearLayout>
