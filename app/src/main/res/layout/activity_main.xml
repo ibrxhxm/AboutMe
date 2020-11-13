@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -51,20 +52,14 @@
         app:srcCompat="@drawable/ic_yellow_star" />
 
 
-    <ScrollView
-        android:id="@+id/scrlv_bio"
+    <TextView
+        android:id="@+id/tv_bio"
+        style="@style/name_style"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/tv_bio"
-            style="@style/name_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="@dimen/mid_padding"
-            android:paddingEnd="@dimen/mid_padding"
-            android:text="@string/bio_dummy" />
-
-    </ScrollView>
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/mid_padding"
+        android:paddingEnd="@dimen/mid_padding"
+        android:scrollbars="vertical"
+        android:text="@string/bio_dummy" />
 
 </LinearLayout>

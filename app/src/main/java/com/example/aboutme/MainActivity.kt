@@ -3,6 +3,7 @@ package com.example.aboutme
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
@@ -13,6 +14,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        findViewById<TextView>(R.id.tv_bio).movementMethod = ScrollingMovementMethod()
 
         handleButtonTaps()
     }
@@ -26,6 +29,7 @@ class MainActivity : AppCompatActivity() {
                 tvNickname.text = etNickname.text.toString()
                 etNickname.visibility = View.GONE
                 view.visibility = View.GONE
+                tvNickname.visibility = View.VISIBLE
 
                 val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(view.windowToken, 0)
