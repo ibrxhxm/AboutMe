@@ -15,6 +15,33 @@
         android:text="@string/name"
         android:textAlignment="center" />
 
+    <EditText
+        android:id="@+id/et_nickname"
+        style="@style/name_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_nickname"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/btn_done"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:text="@string/btn_text" />
+
+    <TextView
+        android:id="@+id/tv_nickname"
+        style="@style/name_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:visibility="gone" />
+
     <ImageView
         android:id="@+id/iv_yellow_star"
         android:layout_width="match_parent"
@@ -34,9 +61,10 @@
             style="@style/name_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/mid_padding"
+            android:paddingEnd="@dimen/mid_padding"
             android:text="@string/bio_dummy" />
 
     </ScrollView>
-
 
 </LinearLayout>
