@@ -11,20 +11,36 @@ import android.widget.EditText
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var etNickname: EditText
+    private lateinit var btnDone: Button
+    private lateinit var tvNickname: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         findViewById<TextView>(R.id.tv_bio).movementMethod = ScrollingMovementMethod()
 
+        tvNickname = findViewById<TextView>(R.id.tv_nickname)
+
+        tvNickname.setOnClickListener {
+            it.visibility = View.GONE
+            val tvValue = it as TextView
+            etNickname.setText(tvValue.text.toString())
+            etNickname.visibility = View.VISIBLE
+            btnDone.visibility = View.VISIBLE
+        }
+
         handleButtonTaps()
     }
 
+
     private fun handleButtonTaps() {
-        findViewById<Button>(R.id.btn_done).setOnClickListener {
+        btnDone = findViewById<Button>(R.id.btn_done)
+        btnDone.setOnClickListener {
             fun addNickname(view: View) {
-                val etNickname = findViewById<EditText>(R.id.et_nickname)
-                val tvNickname = findViewById<TextView>(R.id.tv_nickname)
+                etNickname = findViewById<EditText>(R.id.et_nickname)
 
                 tvNickname.text = etNickname.text.toString()
                 etNickname.visibility = View.GONE

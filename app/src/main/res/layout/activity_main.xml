@@ -51,7 +51,6 @@
         android:contentDescription="@string/desc_yellow_star"
         app:srcCompat="@drawable/ic_yellow_star" />
 
-
     <TextView
         android:id="@+id/tv_bio"
         style="@style/name_style"
