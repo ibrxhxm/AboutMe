@@ -6,30 +6,29 @@ import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import com.example.aboutme.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var etNickname: EditText
-    private lateinit var btnDone: Button
-    private lateinit var tvNickname: TextView
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        findViewById<TextView>(R.id.tv_bio).movementMethod = ScrollingMovementMethod()
+        binding.tvBio.movementMethod = ScrollingMovementMethod()
 
-        tvNickname = findViewById<TextView>(R.id.tv_nickname)
-
-        tvNickname.setOnClickListener {
+        binding.tvNickname.setOnClickListener {
             it.visibility = View.GONE
             val tvValue = it as TextView
-            etNickname.setText(tvValue.text.toString())
-            etNickname.visibility = View.VISIBLE
-            btnDone.visibility = View.VISIBLE
+            binding.apply {
+                etNickname.setText(tvValue.text.toString())
+                invalidateAll()
+                etNickname.visibility = View.VISIBLE
+                btnDone.visibility = View.VISIBLE
+            }
         }
 
         handleButtonTaps()
@@ -37,20 +36,22 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun handleButtonTaps() {
-        btnDone = findViewById<Button>(R.id.btn_done)
-        btnDone.setOnClickListener {
-            fun addNickname(view: View) {
-                etNickname = findViewById<EditText>(R.id.et_nickname)
+        binding.apply {
 
-                tvNickname.text = etNickname.text.toString()
-                etNickname.visibility = View.GONE
-                view.visibility = View.GONE
-                tvNickname.visibility = View.VISIBLE
+            btnDone.setOnClickListener {
+                fun addNickname(view: View) {
+                    tvNickname.text = etNickname.text.toString()
+                    invalidateAll()
+                    etNickname.visibility = View.GONE
+                    view.visibility = View.GONE
+                    tvNickname.visibility = View.VISIBLE
 
-                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                imm.hideSoftInputFromWindow(view.windowToken, 0)
+                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                    imm.hideSoftInputFromWindow(view.windowToken, 0)
+                }
+
+                addNickname(it)
             }
-            addNickname(it)
 
         }
     }
